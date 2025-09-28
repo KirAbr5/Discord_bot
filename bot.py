@@ -114,7 +114,7 @@ class Bot(discord.Client):
                     ).fetchall()
                     leaderboard = "🏆 **Топ-10 самых богатых пользователей:**\n"
                     for i, user in enumerate(top_users, 1):
-                        leaderboard += f'{i}) {user['username']} - {user['balance']} монет\n'
+                        leaderboard += f"{i}) {user['username']} - {user['balance']} монет\n"
                     leaderboard += "\nЗнай героев в лицо! 💰"
                     await ctx.send(leaderboard)
                 else:
@@ -255,4 +255,5 @@ if __name__ == "__main__":
     with open("api_key.txt") as api_token:
         token = api_token.read()
         bot = Bot(token)
+
         bot.run()
